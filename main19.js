@@ -1,34 +1,39 @@
 // տնային 1
 
 class flower {
-    constructor(name) {
+    constructor(name,color) {
         this.name = name;
+        this.color = color;
 
 
     }
 
 }
 class rose extends flower {
-    constructor(name) {
-
+    constructor(name,color) {
+ super(name,color);
         name = "rose";
+    color = "red";
 
 
     }
 }
 
 class clove extends flower {
-    constructor(name) {
-
+    constructor(name,color) {
+        super(name,color);
         name = "clove";
+        color = "white"
+
 
 
     }
 }
 class tulip extends flower {
-    constructor(name) {
-        super(flower);
-        name = "tulip"
+    constructor(name,color) {
+        super(name,color);
+        name = "tulip";
+        color ="yelow"
 
     }
 }
@@ -37,57 +42,41 @@ class tulip extends flower {
 
 
 
-let Flower = new flower("rose", "clove", "tulip");
-console.log(Flower);
+let Flower = new flower("rose","red", "clove","white","yelow", "tulip");
+console.log(Flower.name);
+console.log(Flower.color)
 //
 class Bouquetu {
-    constructor(name) {
-        this.name = name;
-
+    constructor(bouquetuA, bouquetuB) {
+        this.bouquetuA =bouquetuA;
+        this.bouquetuB =bouquetuB;
     }
 
-    static compare(bouquetuA, bouquetuB) {
-        return bouquetuA.name - bouquetuB.name;
+    static sum(bouquetuA, bouquetuB) {
+        return this.bouquetuA + this.bouquetuB;
     }
 }
 
 
-let Bouquetus = [
-    new Bouquetu("rose", "clove"),
-    new Bouquetu("tulip", "snowball"),
-    new Bouquetu("violet", "tin"),
-];
+let Bouquetus = [new Bouquetu("rose", "clove",10)];
+let Bouquetus1 = [new Bouquetu("rose", "clove",10)];
+let Bouquetus2 = [new Bouquetu("rose", "clove",10)];
 
-Bouquetus.sort(Bouquetu.compare);
 
-alert(Bouquetus[0].name);
+
+console.log(Bouquetus.bouquetuA);
+console.log(Bouquetus.bouquetuB);
+
 // 
-class Bouquetu1 {
-    constructor(name) {
-        this.name = name;
 
-    }
-
-    static fill(bouquetuA, bouquetuB) {
-        return bouquetuA.name - bouquetuB.name;
-    }
-}
-
-
-let Bouquetus1 = [
-    new Bouquetu1("rose", "clove"),
-    new Bouquetu1("tulip", "snowball"),
-    new Bouquetu1("violet", "tin"),
-];
-
-Bouquetus1.fill(Bouquetu1);
-
-alert(Bouquetus1[1].name);
 // տնային 2
 class Vehicle {
-    constructor(name, color) {
+    
+    constructor(name, color,door,speed) {
         this.name = name;
         this.color = color;
+        this.door = door;
+        this.speed = speed;
 
 
 
@@ -95,33 +84,36 @@ class Vehicle {
 
 
 }
+
 class car extends Vehicle {
-    constructor(name, color, type) {
+    constructor(name, color, door,speed) {
 
         name = "bmw";
         color = "black";
-        type = "car";
+        door = "4";
+        speed = "100"
 
 
     }
 }
 
 class cart extends Vehicle {
-    constructor(name, color, type) {
+    constructor(name, color, door,speed) {
 
         name = "zil";
         color = "grey";
-        type = "cart";
-
+        door = "2";
+        speed= "50"
 
     }
 }
 class truck extends Vehicle {
-    constructor(name, color) {
-        super(Vehicle);
+    constructor(name, color,door,speed) {
+        
         name = "kamaz";
         color = "blue";
-        type = "truck ";
+        door = "2 ";
+        speed ="60"
 
 
 
@@ -132,15 +124,19 @@ class truck extends Vehicle {
 
 
 
-let vehicle = new Vehicle("bmw", "black", "zil", "grey", "kamaz", "blue");
+let vehicle = new Vehicle("bmw", "black","4","120" ,"zil","2","50", "grey", "kamaz","2","60", "blue");
 console.log(vehicle.name);
 console.log(vehicle.color);
-console.log(vehicle.type);
+console.log(vehicle.door);
+console.log(vehicle.speed);
+
 // 
 class Vehicle1 {
-    constructor(name, color) {
+    constructor(name, color,door,speed) {
         this._name = name;
         this._color = color;
+        this._door = door;
+        this._speed = speed;
 
 
 
@@ -196,7 +192,7 @@ class cart1 extends Vehicle1 {
 }
 class truck1 extends Vehicle1 {
     constructor(name, color) {
-        super(Vehicle1);
+        
         name = "kamaz"
         color = "blue"
 
@@ -219,59 +215,13 @@ class truck1 extends Vehicle1 {
 let vehicle1 = new Vehicle1("bmw", "black", "zil", "grey", "kamaz", "blue");
 console.log(vehicle1.name);
 console.log(vehicle1.color);
-//
-/*class Vehicle2 {
-   constructor(){
-        this.#name =car2; 
-        this.#color = black;
+//tnayin4
+String.prototype.toUpperCase =function(){
+    console.log(this);
+};
+"Text Nailing (TN) is an information extraction method of semi-automatically extracting structured information from unstructured documents. The method allows a human to interactively review small blobs of text out of a large collection of documents, to identify potentially informative expressions. The identified expressions can be used then to enhance computational methods that rely on text (e.g., Regular expression) as well as advanced natural language processing (NLP) techniques. TN combines two concepts: 1) human-interaction with narrative text to identify highly prevalent non-negated expressions, and 2) conversion of all expressions and notes into non-negated alphabetical-only representations to create homogeneous representations. [1][2]"
 
-
-
-   }
-
-}
-class car2 extends Vehicle2 {
-  
-constructor(){
-    super();
-        this.#name = "bmw";
-        this.#color = "black";
-        
-}
- 
-    }
-
-
-
-class cart2 extends Vehicle2 {
-
-   constructor(){
-        super()
-        this.#name = "zil";
-        this.#color = "grey";
-
-
-   }  
-}
-class truck2 extends Vehicle2 {
-    
- constructor(){
-       this. #name = "kamaz"
-       this. #color = "blue"
-}
-}
-
-
-
-
-let vehicle2 = new Vehicle2("bmw", "black", "zil", "grey", "kamaz", "blue");
-vehicle2.#name;
-vehicle2.#color;*/
-
-
-
-
-
+"In traditional machine learning approaches for text classification, a human expert is required to label phrases or entire notes, and then a supervised learning algorithm attempts to generalize the associations and apply them to new data. In contrast, using non-negated distinct expressions eliminates the need for an additional computational method to achieve generalizability.[3][4][5]".toUpperCase();
 
 
 
